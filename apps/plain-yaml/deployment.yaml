@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plain-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: plain-app
+  template:
+    metadata:
+      labels:
+        app: plain-app
+    spec:
+      containers:
+      - name: plain-container
+        image: nginx
+        ports:
+        - containerPort: 80

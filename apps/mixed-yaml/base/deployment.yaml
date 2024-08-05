@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mixed-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mixed-app
+  template:
+    metadata:
+      labels:
+        app: mixed-app
+    spec:
+      containers:
+      - name: mixed-container
+        image: nginx
+        ports:
+        - containerPort: 80

@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: helm-app
+  namespace: default
+spec:
+  releaseName: helm-app
+  chart:
+    spec:
+      chart: stable/nginx
+  values:
+    replicaCount: 1
